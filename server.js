@@ -21,7 +21,7 @@ app.use(cors());
 app.use(express.static('website'));
 
 // Setup the Local Server
-const myport = 3002;
+const myport = 4000;
 const server = app.listen(myport,() => {console.log('Server is Running');console.log(`Listening on port: ${myport}`);});
 
 //Get Weather Data Route
