@@ -1,5 +1,5 @@
 //The Array To Store Weather Info(Temprature , Feeling)
-weatherData = [];
+projectData = [];
 
 // Require Express to run server and routes
 const express =  require('express');
@@ -30,9 +30,9 @@ app.get('/data',getWeather);
 //getWeather Data Implementation
 function getWeather(req,res){
     //Send The Weather Data Info
-    res.send(weatherData);
+    res.send(projectData);
     //Empty the array to receive the new weather data in the next time
-    weatherData = [];
+    projectData = [];
 }
 
 //Post Weather Data Route
@@ -41,11 +41,12 @@ app.post('/add',saveWeather);
 //saveWeather data Impelementation
 function saveWeather(req,res){
     //Create Entity and fill it with the data server receive
+    console.log(req.body);
     const data = {
         temp : req.body.temp,
         date : req.body.date,
         feel : req.body.feel
     };
     //push the entity into the array
-    weatherData.push(data);
+    projectData.push(data);
 }

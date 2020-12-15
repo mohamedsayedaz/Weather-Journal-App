@@ -52,9 +52,10 @@ const displayWeather = async() => {
     const request = await fetch('/data');
     try{
         const mydata = await request.json();
-        document.getElementById('temp').innerHTML = mydata[0].temp;
-        document.getElementById('date').innerHTML = mydata[0].date;
-        document.getElementById('content').innerHTML = mydata[0].feel;
+        document.getElementById('temp').innerHTML = `Temprature : ${mydata[0].temp}`;
+        document.getElementById('date').innerHTML = `Date : ${mydata[0].date}`;
+        document.getElementById('content').innerHTML = `Feeling : ${mydata[0].feel}`;
+        document.getElementById('Noti').style.display='block';
         //console.log(weatherData);
         //Update My Webpage With Weather Attributes
     }catch(err){
